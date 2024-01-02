@@ -1,0 +1,45 @@
+create database exercise_online_shop;
+use exercise_online_shop;
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    price DECIMAL(4 , 2 ),
+    stock_quantity INT
+);
+SELECT 
+    *
+FROM
+    exercise_online_shop.products;
+insert into products values (1, 'Laptop', 999.99, 20),
+ (2, 'Smartphone', 499.50, 30),
+ (3, 'Headphones', 79.99, 50),
+ (4, 'Tablet', 299.75, 15),
+ (5, 'Bluetooth Speaker', 39.95, 40),
+ (6, 'Keyboard', 29.95, 10);
+SELECT 
+    *
+FROM
+    products;
+ alter table products modify price decimal(10,2);
+SELECT 
+    product_name, price
+FROM
+    products;
+SELECT 
+    product_name, price
+FROM
+    products
+WHERE
+    price > 100;
+SELECT 
+    product_name, stock_quantity
+FROM
+    products
+WHERE
+    stock_quantity < 30;
+SELECT 
+    product_name, price
+FROM
+    products
+WHERE
+    price > 100 AND stock_quantity < 30;
